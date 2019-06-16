@@ -35,4 +35,6 @@
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\main.o: ..\..\STM32F4_Proj\rcc_config.h
+.\objects\main.o: ..\..\STM32F4_Proj\gpio_config.h
 .\objects\main.o: ..\..\STM32F4_Proj\usart_config.h

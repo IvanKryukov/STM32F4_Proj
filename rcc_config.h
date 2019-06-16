@@ -3,7 +3,7 @@
 
 #include "stm32f4xx.h"
 
-void RCC_INIT(void);
+void RCC_conf(void);
 
 #endif
 

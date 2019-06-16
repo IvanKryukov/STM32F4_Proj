@@ -1,17 +1,17 @@
 #include "rcc_config.h"
 
-void RCC_INIT(void)
+void RCC_conf(void)
 {
 	RCC->CFGR |= RCC_CFGR_HPRE_DIV1;
 	RCC->CFGR &= ~RCC_CFGR_HPRE;		// Reset AHB1 Prescaler
-	RCC->CFGR |= RCC_CFGR_HPRE_3;		// Set AHB1 Prescaler (div 2)
+	//RCC->CFGR |= RCC_CFGR_HPRE_2;		// Set AHB1 Prescaler (div 2)
 	
 	RCC->CFGR &= ~RCC_CFGR_SW;			// Clear SW bits in CFGR register
 	//RCC->CFGR |= RCC_CFGR_SW_HSE;		// Set HSE clock as system clock
 	RCC->CFGR |= RCC_CFGR_SW_PLL;		// Set PLL clock as system clock
 	
 	RCC->CFGR &= ~RCC_CFGR_PPRE1;		// Reset APB1 Prescaler
-	RCC->CFGR |= RCC_CFGR_PPRE1_DIV16;
+	RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;
 	
 	RCC->CFGR &= ~RCC_CFGR_PPRE2;		// Reset APB2 Prescaler
 	RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;

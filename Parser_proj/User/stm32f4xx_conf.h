@@ -30,7 +30,7 @@
 #define __STM32F4xx_CONF_H
 
 /* Includes ------------------------------------------------------------------*/
-/* Uncomment the line below to enable peripheral header file inclusion */
+/* Uncomment the line below to enable peripheral header file inclusion *
 #include "stm32f4xx_adc.h"
 #include "stm32f4xx_crc.h"
 #include "stm32f4xx_dbgmcu.h"
@@ -48,7 +48,7 @@
 #include "stm32f4xx_syscfg.h"
 #include "stm32f4xx_tim.h"
 #include "stm32f4xx_usart.h"
-#include "stm32f4xx_wwdg.h"
+#include "stm32f4xx_wwdg.h" */
 #include "misc.h" /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
 
 #if defined (STM32F429_439xx)
@@ -77,13 +77,13 @@
 #endif /* STM32F427_437xx */
 
 #if defined (STM32F40_41xxx)
-#include "stm32f4xx_cryp.h"
-#include "stm32f4xx_hash.h"
-#include "stm32f4xx_rng.h"
-#include "stm32f4xx_can.h"
-#include "stm32f4xx_dac.h"
-#include "stm32f4xx_dcmi.h"
-#include "stm32f4xx_fsmc.h"
+// #include "stm32f4xx_cryp.h"
+// #include "stm32f4xx_hash.h"
+// #include "stm32f4xx_rng.h"
+// #include "stm32f4xx_can.h"
+// #include "stm32f4xx_dac.h"
+// #include "stm32f4xx_dcmi.h"
+// #include "stm32f4xx_fsmc.h"
 #endif /* STM32F40_41xxx */
 
 /* Exported types ------------------------------------------------------------*/

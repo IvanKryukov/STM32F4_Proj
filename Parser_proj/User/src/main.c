@@ -1,10 +1,8 @@
 #include "main.h"
 
-uint8_t* serial_word;
-
 void GPIO_conf(void)
 {
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN|RCC_AHB1ENR_GPIOBEN|RCC_AHB1ENR_GPIOCEN|RCC_AHB1ENR_GPIODEN; // Set clock for GPIOA, GPIOD
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN|RCC_AHB1ENR_GPIOBEN|RCC_AHB1ENR_GPIOCEN|RCC_AHB1ENR_GPIODEN; // Set clock for all GPIO
 	
 	/******************** Set PC6 Pin USART6 (TX) ********************/
 	GPIOC->MODER &= ~(GPIO_MODER_MODER6);
@@ -59,13 +57,12 @@ int main(void)
 void USART6_IRQHandler(void)
 {
 	uint8_t buf = 0;
-	GPIOD->ODR |= GPIO_ODR_ODR_14;
-	
+	GPIOD->ODR |= GPIO_ODR_ODR_14;	
 	
 	USART6->SR |= USART_SR_RXNE;
 	while(!(USART6->SR & USART_SR_RXNE));
 	
-	buf = USART6->DR;
+	buf = USART6->DR;	// read a key
 	
 	if (buf == 0x0D)	// if user pressed 'Enter' 
 	{

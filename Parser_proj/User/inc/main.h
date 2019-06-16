@@ -5,6 +5,7 @@
 #include "rcc_config.h"
 #include "gpio_config.h"
 #include "usart_config.h"
+#include "parser.h"
 
 void GPIO_conf(void);
 int main(void);

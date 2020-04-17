@@ -8,6 +8,7 @@ void USART_conf(USART_TypeDef* USARTx);
 void USART_sendByte(USART_TypeDef* USARTx, uint8_t data);
 void USART_sendBytes(USART_TypeDef* USARTx, uint8_t* data, uint8_t len);
 void USART_sendMessage(USART_TypeDef* USARTx, uint8_t* data);
+uint8_t USART_readByte(USART_TypeDef* USARTx);
 
 #endif
 

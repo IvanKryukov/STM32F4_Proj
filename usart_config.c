@@ -43,12 +43,12 @@ void USART_conf(USART_TypeDef* USARTx)
 /* Transmit USART Data and waiting for the end of transfer */
 void USART_sendByte(USART_TypeDef* USARTx, uint8_t data)
 {
-	GPIOD->ODR |= GPIO_ODR_ODR_15;
+	//GPIOD->ODR |= GPIO_ODR_ODR_15;
 	
 	USARTx->DR = data;
 	while((USARTx->SR & USART_SR_TC) == 0); // Waiting for transfer completed
 	
-	GPIOD->ODR &= ~GPIO_ODR_ODR_15;
+	GPIOD->ODR ^= GPIO_ODR_ODR_15;
 }
 
 /* Transmit USART Data and waiting for the end of transfer */
@@ -79,6 +79,11 @@ void USART_sendMessage(USART_TypeDef* USARTx, uint8_t* data)
 		
 		GPIOD->ODR &= ~GPIO_ODR_ODR_15;
 	}
+}
+
+uint8_t USART_readByte(USART_TypeDef* USARTx)
+{
+	return USARTx->DR;
 }
 
 

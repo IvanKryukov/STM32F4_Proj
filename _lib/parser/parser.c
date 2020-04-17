@@ -12,7 +12,6 @@ int parse_line(uint8_t* line, uint8_t symb)
 		
 		case 0x0D:
 			return 0;
-			break;
 		
 		default:
 			*line++ = symb;

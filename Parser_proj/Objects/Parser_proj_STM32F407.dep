@@ -1,66 +1,66 @@
 Dependencies for Project 'Parser_proj', Target 'STM32F407': (DO NOT MODIFY !)
-F (..\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f40xx.s)(0x582097A0)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F407xx SETA 1"--list .\listings\startup_stm32f40xx.lst --xref -o .\objects\startup_stm32f40xx.o --depend .\objects\startup_stm32f40xx.d)
-F (..\CMSIS\Include\core_cm4.h)(0x581CC64D)()
-F (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)()
-F (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)()
-F (..\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c)(0x5D06C11E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f4xx.o --omf_browse .\objects\system_stm32f4xx.crf --depend .\objects\system_stm32f4xx.d)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)
-I (..\CMSIS\Include\core_cm4.h)(0x581CC64D)
+F (..\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f40xx.s)(0x5E99FEC4)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F407xx SETA 1"--list .\listings\startup_stm32f40xx.lst --xref -o .\objects\startup_stm32f40xx.o --depend .\objects\startup_stm32f40xx.d)
+F (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)()
+F (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)()
+F (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)()
+F (..\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c)(0x5E99FEC4)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f4xx.o --omf_browse .\objects\system_stm32f4xx.crf --depend .\objects\system_stm32f4xx.d)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)
+I (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (..\CMSIS\Include\core_cmInstr.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmFunc.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmSimd.h)(0x581CC64D)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)
-I (.\User\stm32f4xx_conf.h)(0x5D06D2F5)
-I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x581CC67B)
-F (.\User\src\main.c)(0x5D06D309)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (.\User\inc\main.h)(0x5D06D1F4)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)
-I (..\CMSIS\Include\core_cm4.h)(0x581CC64D)
+I (..\CMSIS\Include\core_cmInstr.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmFunc.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmSimd.h)(0x5E99FEC6)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)
+I (.\User\stm32f4xx_conf.h)(0x5E99FEC7)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5E99FEC7)
+F (.\User\src\main.c)(0x5E9A2F96)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\User\inc\main.h)(0x5E9A1D65)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)
+I (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (..\CMSIS\Include\core_cmInstr.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmFunc.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmSimd.h)(0x581CC64D)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)
-I (.\User\stm32f4xx_conf.h)(0x5D06D2F5)
-I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x581CC67B)
-I (..\..\STM32F4_Proj\rcc_config.h)(0x5D06C1A2)
-I (..\..\STM32F4_Proj\gpio_config.h)(0x5D0640EF)
-I (..\..\STM32F4_Proj\usart_config.h)(0x5D06C88E)
-I (..\_lib\parser\parser.h)(0x5D06D3DB)
-F (..\usart_config.c)(0x5D06C846)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\usart_config.o --omf_browse .\objects\usart_config.crf --depend .\objects\usart_config.d)
-I (..\usart_config.h)(0x5D06C88E)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)
-I (..\CMSIS\Include\core_cm4.h)(0x581CC64D)
+I (..\CMSIS\Include\core_cmInstr.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmFunc.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmSimd.h)(0x5E99FEC6)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)
+I (.\User\stm32f4xx_conf.h)(0x5E99FEC7)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5E99FEC7)
+I (..\..\STM32F4_Proj\rcc_config.h)(0x5E99FEC8)
+I (..\..\STM32F4_Proj\gpio_config.h)(0x5E99FEC8)
+I (..\..\STM32F4_Proj\usart_config.h)(0x5E9A0CCA)
+I (..\_lib\parser\parser.h)(0x5E9A1D89)
+F (..\usart_config.c)(0x5E9A1B5A)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\usart_config.o --omf_browse .\objects\usart_config.crf --depend .\objects\usart_config.d)
+I (..\usart_config.h)(0x5E9A0CCA)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)
+I (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (..\CMSIS\Include\core_cmInstr.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmFunc.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmSimd.h)(0x581CC64D)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)
-I (.\User\stm32f4xx_conf.h)(0x5D06D2F5)
-I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x581CC67B)
-F (..\rcc_config.c)(0x5D06C1C2)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\rcc_config.o --omf_browse .\objects\rcc_config.crf --depend .\objects\rcc_config.d)
-I (..\rcc_config.h)(0x5D06C1A2)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)
-I (..\CMSIS\Include\core_cm4.h)(0x581CC64D)
+I (..\CMSIS\Include\core_cmInstr.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmFunc.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmSimd.h)(0x5E99FEC6)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)
+I (.\User\stm32f4xx_conf.h)(0x5E99FEC7)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5E99FEC7)
+F (..\rcc_config.c)(0x5E9A054E)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\rcc_config.o --omf_browse .\objects\rcc_config.crf --depend .\objects\rcc_config.d)
+I (..\rcc_config.h)(0x5E99FEC8)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)
+I (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (..\CMSIS\Include\core_cmInstr.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmFunc.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmSimd.h)(0x581CC64D)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)
-I (.\User\stm32f4xx_conf.h)(0x5D06D2F5)
-I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x581CC67B)
-F (..\gpio_config.c)(0x5D0640F3)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\gpio_config.o --omf_browse .\objects\gpio_config.crf --depend .\objects\gpio_config.d)
-I (..\gpio_config.h)(0x5D0640EF)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5D02BB23)
-I (..\CMSIS\Include\core_cm4.h)(0x581CC64D)
+I (..\CMSIS\Include\core_cmInstr.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmFunc.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmSimd.h)(0x5E99FEC6)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)
+I (.\User\stm32f4xx_conf.h)(0x5E99FEC7)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5E99FEC7)
+F (..\gpio_config.c)(0x5E99FEC8)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\gpio_config.o --omf_browse .\objects\gpio_config.crf --depend .\objects\gpio_config.d)
+I (..\gpio_config.h)(0x5E99FEC8)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5E99FEC4)
+I (..\CMSIS\Include\core_cm4.h)(0x5E99FEC6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)
-I (..\CMSIS\Include\core_cmInstr.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmFunc.h)(0x581CC64D)
-I (..\CMSIS\Include\core_cmSimd.h)(0x581CC64D)
-I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x582097AB)
-I (.\User\stm32f4xx_conf.h)(0x5D06D2F5)
-I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x581CC67B)
-F (..\_lib\parser\parser.c)(0x5D06D4CA)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\parser.o --omf_browse .\objects\parser.crf --depend .\objects\parser.d)
-I (..\_lib\parser\parser.h)(0x5D06D3DB)
+I (..\CMSIS\Include\core_cmInstr.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmFunc.h)(0x5E99FEC6)
+I (..\CMSIS\Include\core_cmSimd.h)(0x5E99FEC6)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5E99FEC4)
+I (.\User\stm32f4xx_conf.h)(0x5E99FEC7)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5E99FEC7)
+F (..\_lib\parser\parser.c)(0x5E9A2004)(--c99 -c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include -I ..\CMSIS\Device\ST\STM32F4xx\Source\Templates -I ..\STM32F4xx_StdPeriph_Driver -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\STM32F4xx_StdPeriph_Driver\src -I .\User -I .\User\inc -I .\User\src -I ..\..\STM32F4_Proj -I ..\_lib\parser-I.\RTE\_STM32F407-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER-o .\objects\parser.o --omf_browse .\objects\parser.crf --depend .\objects\parser.d)
+I (..\_lib\parser\parser.h)(0x5E9A1D89)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BC994)

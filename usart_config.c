@@ -1,5 +1,7 @@
 #include "usart_config.h"
 
+static USART_TypeDef* USART_IO;
+
 uint32_t USARTx_BRRegister(uint32_t BaudRate, uint32_t APBxCLK)
 {
 	double BR_All;
@@ -38,13 +40,13 @@ void USART_conf(USART_TypeDef* USARTx)
 	if (USARTx == USART2) NVIC_EnableIRQ(USART2_IRQn);
 	if (USARTx == USART3) NVIC_EnableIRQ(USART3_IRQn);
 	if (USARTx == USART6) NVIC_EnableIRQ(USART6_IRQn);
+	
+	USART_IO = USARTx;
 }
 
 /* Transmit USART Data and waiting for the end of transfer */
 void USART_sendByte(USART_TypeDef* USARTx, uint8_t data)
 {
-	//GPIOD->ODR |= GPIO_ODR_ODR_15;
-	
 	USARTx->DR = data;
 	while((USARTx->SR & USART_SR_TC) == 0); // Waiting for transfer completed
 	
@@ -56,13 +58,11 @@ void USART_sendBytes(USART_TypeDef* USARTx, uint8_t* data, uint8_t len)
 {
 	
 	while(len--)
-	{
-		GPIOD->ODR |= GPIO_ODR_ODR_15;
-		
+	{		
 		USARTx->DR = (uint8_t)*data++;
 		while((USARTx->SR & USART_SR_TC) == 0); // Waiting for completed transfer
 		
-		GPIOD->ODR &= ~GPIO_ODR_ODR_15;
+		GPIOD->ODR ^= GPIO_ODR_ODR_15;
 	}
 }
 
@@ -72,12 +72,10 @@ void USART_sendMessage(USART_TypeDef* USARTx, uint8_t* data)
 	
 	while(*data)
 	{
-		GPIOD->ODR |= GPIO_ODR_ODR_15;
-		
 		USARTx->DR = (uint8_t)*data++;
 		while((USARTx->SR & USART_SR_TC) == 0); // Waiting for completed transfer
 		
-		GPIOD->ODR &= ~GPIO_ODR_ODR_15;
+		GPIOD->ODR ^= GPIO_ODR_ODR_15;
 	}
 }
 
@@ -86,4 +84,27 @@ uint8_t USART_readByte(USART_TypeDef* USARTx)
 	return USARTx->DR;
 }
 
+/***************************************
+ * Functions for simple external usage *
+ ***************************************/
+
+void print(unsigned char *out_line)
+{
+	USART_sendMessage(USART_IO, out_line);
+}
+
+void print_byte(unsigned char out_byte)
+{
+	USART_sendByte(USART_IO, out_byte);
+}
+
+void print_bytes(unsigned char *out_bytes, unsigned char bytes_count)
+{
+	USART_sendBytes(USART_IO, out_bytes, bytes_count);
+}
+
+unsigned char read_byte(void)
+{
+	return USART_readByte(USART_IO);
+}
 

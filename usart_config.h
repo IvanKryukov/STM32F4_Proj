@@ -10,5 +10,10 @@ void USART_sendBytes(USART_TypeDef* USARTx, uint8_t* data, uint8_t len);
 void USART_sendMessage(USART_TypeDef* USARTx, uint8_t* data);
 uint8_t USART_readByte(USART_TypeDef* USARTx);
 
+void print(unsigned char *out_line);
+void print_byte(unsigned char out_byte);
+void print_bytes(unsigned char *out_bytes, unsigned char bytes_count);
+unsigned char read_byte(void);
+
 #endif
 

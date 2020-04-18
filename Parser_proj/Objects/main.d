@@ -14,3 +14,5 @@
 .\objects\main.o: ..\..\STM32F4_Proj\gpio_config.h
 .\objects\main.o: ..\..\STM32F4_Proj\usart_config.h
 .\objects\main.o: ..\_lib\parser\parser.h
+.\objects\main.o: .\User\inc\main.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

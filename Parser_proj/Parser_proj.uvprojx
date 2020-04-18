@@ -445,6 +445,11 @@
               <FileType>1</FileType>
               <FilePath>..\_lib\parser\parser.c</FilePath>
             </File>
+            <File>
+              <FileName>parser_io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\_lib\parser\parser_io.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

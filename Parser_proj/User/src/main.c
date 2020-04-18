@@ -1,6 +1,7 @@
 #include "main.h"
 
-uint8_t input_line[255], temp_line[255];
+unsigned char input_line[255], temp_line[255];
+char	status = 0;
 uint8_t *p_input = &input_line[0], *p_temp = &temp_line[0];
 
 void clean_input_line(void)
@@ -8,13 +9,6 @@ void clean_input_line(void)
 	int i;
 	for (i = 0; i < 255; i++)
 		input_line[i] = 0;
-}
-
-void copy_to_temp_line(void)
-{
-	int i;
-	for (i = 0; i < 255; i++)
-		temp_line[i] = input_line[i];
 }
 
 void delay_kcycles(uint32_t kcycles)
@@ -72,9 +66,21 @@ int main(void)
 	Setting_GPIO_AF(GPIOC, GPIO_PinSource6, GPIO_AF_USART6);
 	Setting_GPIO_AF(GPIOC, GPIO_PinSource7, GPIO_AF_USART6);
 	
+	print("\n\r>> ");
+	
 	while(1)
 	{
-		
+		parser_routine(&status, temp_line);
+	}
+}
+
+void prs_clean_line_sign(USART_TypeDef* USARTx, uint8_t sign)
+{
+	print_byte(0x7F);
+	if (p_input > &input_line[0]) 
+	{
+		p_input--;
+		*p_input = 0;
 	}
 }
 
@@ -86,29 +92,27 @@ void USART6_IRQHandler(void)
 	
 	if (buf == 0x0D)	// if user pressed 'Enter' 
 	{
-		USART_sendMessage(USART6, "\n\r");
-		USART_sendMessage(USART6, "cmd >> ");
-		USART_sendMessage(USART6, input_line);
-		USART_sendMessage(USART6, "\n\r");
+		print("\n\r");
+		//print(input_line);
 		p_input = &input_line[0];
-		copy_to_temp_line();
+		prs_copy_to_start_line(input_line);
 		clean_input_line();
+		status = 1;
 	}
 	else if (buf == 0x7F)
 	{
-		USART_sendByte(USART6, 0x7F);
 		if (p_input > &input_line[0]) 
 		{
+			print_byte(0x7F);
 			p_input--;
 			*p_input = 0;
 		}
 	}
 	else 							// if pressed another key
 	{
-		USART_sendByte(USART6, buf);
+		print_byte(buf);
 		*p_input++ = buf;
-	}	
-	
+	}		
 	GPIOD->ODR ^= GPIO_ODR_ODR_14;
 }
 

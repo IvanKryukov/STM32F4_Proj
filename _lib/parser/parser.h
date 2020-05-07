@@ -33,7 +33,7 @@ void prs_copy_to_start_line(unsigned char* extern_line);
 void print_cmd_parser_struct(parser_struct *parser_print);
 cmd_idx_type define_cmd_parser_index(unsigned char *cmd_line);
 
-void parser_routine(char *status, unsigned char *line);
+void parser_routine(char *status);
 
 #endif
 

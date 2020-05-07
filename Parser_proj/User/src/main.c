@@ -70,7 +70,7 @@ int main(void)
 	
 	while(1)
 	{
-		parser_routine(&status, temp_line);
+		parser_routine(&status);
 	}
 }
 

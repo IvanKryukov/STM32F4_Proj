@@ -8,14 +8,14 @@ parser_struct parser_line;
 
 unsigned char cmd_idx_names[ALL_COMMANDS][16] = 
 {
-	"unknown"
-	"help"
+	"unknown",
+	"help",
 	"log"
 };
 
 unsigned char cmd_parser_prm_name[ALL_PARAMETERS][10] = 
 { 
-	"s"       // single argument
+	"!"       // single argument
 };
 
 unsigned char start_line[256];
@@ -47,25 +47,27 @@ void print_cmd_parser_struct(parser_struct *parser_print)
 
 cmd_idx_type define_cmd_parser_index(unsigned char *cmd_line)
 {
-	int i;
-	for (i = 0; i < ALL_COMMANDS; i++) {
-		if ((strstr(cmd_line, cmd_idx_names[i]) != NULL) && 
-			  (strcmp(cmd_line, cmd_idx_names[i]) == 0)) 
+	int i, j, k = 0;
+	unsigned char *p = cmd_line, *pp, c1, c2;
+	unsigned int numbers[ALL_COMMANDS];
+
+	for (i = 0; i < ALL_COMMANDS; i++) 
+	{
+		if ((strstr((const char *)start_line, (const char *)cmd_idx_names[i]) != NULL) && 
+				(strcmp((const char *)start_line, (const char *)cmd_idx_names[i]) == 0)) 
 		{
-			strcpy((char *)parser_line.cmd_idx_name, (char *)cmd_idx_names[i]);
 			return ((cmd_idx_type) i);
 		}
 	}
-
-	return cmd_unknown;
+	return cmd_unknown;	
 }
 
-void parser_routine(char *status, unsigned char *line)
+void parser_routine(char *status)
 {
 	if (*status != 0)
 	{
 		*status = 0;
-		parser_line.cmd_idx = define_cmd_parser_index(line);
+		parser_line.cmd_idx = define_cmd_parser_index(start_line);
 		
 		// command action START
 		
@@ -79,6 +81,20 @@ void parser_routine(char *status, unsigned char *line)
 				break;
 			
 			case cmd_get_log:
+				prs_print("    #   # #####  #### ####   ### "NL
+									"   /# #/   /   /     /   / /   /"NL
+									"  / # /   /   /     ####  /   /"NL
+									" /   /   /   /     / #   /   /"NL
+									"/   / #####  #### /   #  ### "NL
+									NL
+									"    ####   ###  ####   #### ##### #### "NL
+									"   /   / /   / /   / /     /     /   /"NL
+									"  ####  ##### ####   ###  ##### #### "NL
+									" /     /   / / #       / /     / #  "NL
+									"/     /   / /   # ####  ##### /   #"NL
+									NL
+									"tiny parser for microcontroller"NL
+									);
 				break;
 			
 			default:

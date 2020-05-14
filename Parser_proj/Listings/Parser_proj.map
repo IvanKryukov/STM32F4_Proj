@@ -393,7 +393,7 @@ Image Symbol Table
     x$fpl$fpinit                             0x08000c78   Section       10  fpinit.o(x$fpl$fpinit)
     $v0                                      0x08000c78   Number         0  fpinit.o(x$fpl$fpinit)
     x$fpl$usenofp                            0x08000c82   Section        0  usenofp.o(x$fpl$usenofp)
-    .conststring                             0x08000c84   Section     1034  parser.o(.conststring)
+    .conststring                             0x08000c84   Section     1139  parser.o(.conststring)
     .data                                    0x20000000   Section       12  main.o(.data)
     .data                                    0x2000000c   Section        4  usart_config.o(.data)
     USART_IO                                 0x2000000c   Data           4  usart_config.o(.data)
@@ -613,7 +613,7 @@ Image Symbol Table
     USARTx_BRRegister                        0x08000909   Thumb Code    46  usart_config.o(i.USARTx_BRRegister)
     clean_input_line                         0x08000939   Thumb Code    18  main.o(i.clean_input_line)
     main                                     0x080009d5   Thumb Code    64  main.o(i.main)
-    parser_routine                           0x08000a2d   Thumb Code   114  parser.o(i.parser_routine)
+    parser_routine                           0x08000a2d   Thumb Code   116  parser.o(i.parser_routine)
     print                                    0x08000ad1   Thumb Code    16  usart_config.o(i.print)
     print_byte                               0x08000ae5   Thumb Code    16  usart_config.o(i.print_byte)
     prs_copy_to_start_line                   0x08000af9   Thumb Code    26  parser.o(i.prs_copy_to_start_line)
@@ -627,8 +627,8 @@ Image Symbol Table
     __fplib_config_fpu_vfp                   0x08000c81   Thumb Code     0  fpinit.o(x$fpl$fpinit)
     __fplib_config_pureend_doubles           0x08000c81   Thumb Code     0  fpinit.o(x$fpl$fpinit)
     __I$use$fp                               0x08000c82   Number         0  usenofp.o(x$fpl$usenofp)
-    Region$$Table$$Base                      0x08001090   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080010b0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Base                      0x080010f8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001118   Number         0  anon$$obj.o(Region$$Table)
     status                                   0x20000000   Data           1  main.o(.data)
     p_input                                  0x20000004   Data           4  main.o(.data)
     p_temp                                   0x20000008   Data           4  main.o(.data)
@@ -650,9 +650,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001104, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000116c, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000010b0, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001118, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -747,20 +747,20 @@ Memory Map of the image
     0x08000c78   0x08000c78   0x0000000a   Code   RO          527    x$fpl$fpinit        fz_wm.l(fpinit.o)
     0x08000c82   0x08000c82   0x00000000   Code   RO          442    x$fpl$usenofp       fz_wm.l(usenofp.o)
     0x08000c82   0x08000c82   0x00000002   PAD
-    0x08000c84   0x08000c84   0x0000040a   Data   RO          313    .conststring        parser.o
-    0x0800108e   0x0800108e   0x00000002   PAD
-    0x08001090   0x08001090   0x00000020   Data   RO          595    Region$$Table       anon$$obj.o
+    0x08000c84   0x08000c84   0x00000473   Data   RO          313    .conststring        parser.o
+    0x080010f7   0x080010f7   0x00000001   PAD
+    0x080010f8   0x080010f8   0x00000020   Data   RO          595    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080010b0, Size: 0x00000ce0, Max: 0x00020000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001118, Size: 0x00000ce0, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080010b0   0x0000000c   Data   RW           87    .data               main.o
-    0x2000000c   0x080010bc   0x00000004   Data   RW          172    .data               usart_config.o
-    0x20000010   0x080010c0   0x00000044   Data   RW          314    .data               parser.o
+    0x20000000   0x08001118   0x0000000c   Data   RW           87    .data               main.o
+    0x2000000c   0x08001124   0x00000004   Data   RW          172    .data               usart_config.o
+    0x20000010   0x08001128   0x00000044   Data   RW          314    .data               parser.o
     0x20000054        -       0x000001fe   Zero   RW           86    .bss                main.o
-    0x20000252   0x08001104   0x00000002   PAD
+    0x20000252   0x0800116c   0x00000002   PAD
     0x20000254        -       0x0000042c   Zero   RW          312    .bss                parser.o
     0x20000680        -       0x00000060   Zero   RW          469    .bss                c_w.l(libspace.o)
     0x200006e0        -       0x00000200   Zero   RW            2    HEAP                startup_stm32f40xx.o
@@ -776,7 +776,7 @@ Image component sizes
 
         64          4          0          0          0        890   gpio_config.o
        588         66          0         12        510       3407   main.o
-       384         78       1034         68       1068       4210   parser.o
+       384         76       1139         68       1068       4210   parser.o
         12          0          0          0          0        548   parser_io.o
        120          6          0          0          0        471   rcc_config.o
         64         26        392          0       1536        944   startup_stm32f40xx.o
@@ -784,9 +784,9 @@ Image component sizes
        412         46          0          4          0      30510   usart_config.o
 
     ----------------------------------------------------------------------
-      1988        258       1460         84       3116     284041   Object Totals
+      1988        256       1564         84       3116     284041   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          2          0          2          0   (incl. Padding)
+         4          0          1          0          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -842,15 +842,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2812        282       1460         84       3212     283053   Grand Totals
-      2812        282       1460         84       3212     283053   ELF Image Totals
-      2812        282       1460         84          0          0   ROM Totals
+      2812        280       1564         84       3212     283053   Grand Totals
+      2812        280       1564         84       3212     283053   ELF Image Totals
+      2812        280       1564         84          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4272 (   4.17kB)
+    Total RO  Size (Code + RO Data)                 4376 (   4.27kB)
     Total RW  Size (RW Data + ZI Data)              3296 (   3.22kB)
-    Total ROM Size (Code + RO Data + RW Data)       4356 (   4.25kB)
+    Total ROM Size (Code + RO Data + RW Data)       4460 (   4.36kB)
 
 ==============================================================================
 

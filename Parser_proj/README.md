@@ -1,20 +1,20 @@
 # Parser_proj
 
-#################################################
-#                                               #
-#     ##   ## ######  ####  #####   #####       #
-#    //# #//   //   //     //  // //   //       #
-#   // # //   //   //     #####  //   //        #
-#  //   //   //   //     // #   //   //         #
-# //   // ######  ####  //   #  #####           #
-#                                               #
-#     #####   ####   #####   ##### ###### ##### #
-#    //  // //   // //  // //     //     //  // #
-#   #####  ####### #####   ####  ###### #####   #
-#  //     //   // // #       // //     // #     #
-# //     //   // //   # #####  ###### //   #    #
-#                                               #
-#################################################
+HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+H                                               H
+H     HH   HH HHHHHH  HHHH  HHHHH   HHHHH       H
+H    //H H//   //   //     //  // //   //       H
+H   // H //   //   //     HHHHH  //   //        H
+H  //   //   //   //     // H   //   //         H
+H //   // HHHHHH  HHHH  //   H  HHHHH           H
+H                                               H
+H     HHHHH   HHHH   HHHHH   HHHHH HHHHHH HHHHH H
+H    //  // //   // //  // //     //     //  // H
+H   HHHHH  HHHHHHH HHHHH   HHHH  HHHHHH HHHHH   H
+H  //     //   // // H       // //     // H     H
+H //     //   // //   H HHHHH  HHHHHH //   H    H
+H                                               H
+HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH$
 
 Parser only project.
 If you want to control any action like data exchanging, peripherals control, etc. 

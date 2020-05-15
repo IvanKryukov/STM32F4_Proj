@@ -31,8 +31,8 @@ typedef struct _parser_struct
     unsigned char		chr_argument[512];
 } parser_struct;
 
-void prs_copy_to_start_line(unsigned char* extern_line);
-void parser_routine(char *status);
+void parser_catch_sign(unsigned char *sign);
+void parser_routine(void);
 
 #endif
 

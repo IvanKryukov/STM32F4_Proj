@@ -1,21 +1,21 @@
 #include "parser_io.h"
 
-void prs_print(unsigned char *out_line)
+void p_print(unsigned char *out_line)
 {
 	print(out_line);
 }
 
-void prs_print_byte(unsigned char out_byte)
+void p_print_byte(unsigned char out_byte)
 {
 	print_byte(out_byte);
 }
 
-void prs_print_bytes(unsigned char *out_bytes, unsigned char bytes_count)
+void p_print_bytes(unsigned char *out_bytes, unsigned char bytes_count)
 {
 	print_bytes(out_bytes, bytes_count);
 }
 
-void prs_print_int(unsigned int out_int)
+void p_print_int(unsigned int out_int)
 {
 	static unsigned char out_uchar[256] = "";
 	static unsigned char *p_first_uchar = &out_uchar[0], buf;
@@ -39,7 +39,7 @@ void prs_print_int(unsigned int out_int)
 	print(NL);
 }
 
-unsigned char prs_read_byte(void)
+unsigned char p_read_byte(void)
 {
 	return read_byte();
 }

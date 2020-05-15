@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define BACKSPASE_KEY	0x7F
+#define ENTER_KEY			0x0D
+
 parser_struct parser_line;
 
 /***** Variables *****/
@@ -21,9 +24,45 @@ unsigned char cmd_parser_prm_name[ALL_PARAMETERS][10] =
 	"h"	// help - to get help of command
 };
 
-unsigned char start_line[256], sub_line[32];
+static unsigned char input_line[255], start_line[256], sub_line[32];
+static unsigned char *p_input = &input_line[0];
+static char status = 0;
 
 /*********************/
+
+static void prs_copy_to_start_line(unsigned char *extern_line)
+{
+	int i = 0;
+	
+	while (*extern_line)
+		start_line[i++] = *extern_line++;
+}
+
+void parser_catch_sign(unsigned char *sign)
+{
+	if (*sign == ENTER_KEY)	// if user pressed 'Enter' 
+	{
+		p_print("\n\r");
+		p_input = &input_line[0];
+		prs_copy_to_start_line(input_line);
+		memset(input_line, 0, 255);
+		status = 1;
+	}
+	else if (*sign == BACKSPASE_KEY)
+	{
+		if (p_input > &input_line[0]) 
+		{
+			p_print_byte(0x7F);
+			p_input--;
+			*p_input = 0;
+		}
+	}
+	else 							// if pressed another key
+	{
+		p_print_byte(*sign);
+		*p_input++ = *sign;
+	}	
+}
 
 static unsigned char* select_subline(unsigned char *src, unsigned char *dst)
 {
@@ -37,14 +76,6 @@ static unsigned char* select_subline(unsigned char *src, unsigned char *dst)
 		*dst++ = *src++;
 	
 	return src;
-}
-
-void prs_copy_to_start_line(unsigned char *extern_line)
-{
-	int i = 0;
-	
-	while (*extern_line)
-		start_line[i++] = *extern_line++;
 }
 
 static cmd_idx_type define_cmd_parser_index(unsigned char *cmd_line)
@@ -82,14 +113,14 @@ static int define_cmd_parser_parameter(unsigned char *cmd_line,
   return 0;
 }
 
-void parser_routine(char *status)
+void parser_routine(void)
 {
 	unsigned char *psrc = &start_line[0], *pdst = &sub_line[0];
 	int res = 0;
 	
-	if (*status != 0)
+	if (status != 0)
 	{
-		*status = 0;		
+		status = 0;		
 		
 		/****** catch the command ******/
 		psrc = select_subline(psrc, pdst);
@@ -100,11 +131,12 @@ void parser_routine(char *status)
 		res = define_cmd_parser_parameter(pdst, &parser_line);
 		
 		/***** catch the argument ******/
+		// TODO define_cmd_argument()
 		
 		switch (parser_line.cmd_idx)
 		{
 			case cmd_get_help:
-				prs_print("#################################################"NL
+				p_print("#################################################"NL
 									"#                                               #"NL
 									"#     ##   ## ######  ####  #####   #####       #"NL
 									"#    //# #//   //   //     //  // //   //       #"NL
@@ -130,29 +162,17 @@ void parser_routine(char *status)
 				break;
 			
 			case cmd_get_list:
-				prs_print("list of commands"NL
+				p_print("list of commands"NL
 									"1: help - general help"NL
 									"2: list - get list of system"NL);
 				break;
 			
 			default:
-				prs_print("unknown command!"NL);
+				p_print("unknown command!"NL);
 				break;
 		}
 		
-	/*
-		switch (parser_line.cmd_prm)
-		{
-			case: 
-				
-				break;
-			
-			default:				
-				prs_print("unknown parameter!"NL);
-				break;
-		}*/
-		
-		prs_print(NL">> ");
+		p_print(NL">> ");
 	}
 }
 

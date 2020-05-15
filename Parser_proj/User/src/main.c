@@ -1,16 +1,5 @@
 #include "main.h"
 
-unsigned char input_line[255], temp_line[255];
-char	status = 0;
-uint8_t *p_input = &input_line[0], *p_temp = &temp_line[0];
-
-void clean_input_line(void)
-{
-	int i;
-	for (i = 0; i < 255; i++)
-		input_line[i] = 0;
-}
-
 void delay_kcycles(uint32_t kcycles)
 {
 	kcycles *= 1000;
@@ -70,17 +59,7 @@ int main(void)
 	
 	while(1)
 	{
-		parser_routine(&status);
-	}
-}
-
-void prs_clean_line_sign(USART_TypeDef* USARTx, uint8_t sign)
-{
-	print_byte(0x7F);
-	if (p_input > &input_line[0]) 
-	{
-		p_input--;
-		*p_input = 0;
+		parser_routine();
 	}
 }
 
@@ -90,29 +69,8 @@ void USART6_IRQHandler(void)
 	USART6->SR |= USART_SR_RXNE;
 	buf = USART6->DR;	// read a key
 	
-	if (buf == 0x0D)	// if user pressed 'Enter' 
-	{
-		print("\n\r");
-		//print(input_line);
-		p_input = &input_line[0];
-		prs_copy_to_start_line(input_line);
-		clean_input_line();
-		status = 1;
-	}
-	else if (buf == 0x7F)
-	{
-		if (p_input > &input_line[0]) 
-		{
-			print_byte(0x7F);
-			p_input--;
-			*p_input = 0;
-		}
-	}
-	else 							// if pressed another key
-	{
-		print_byte(buf);
-		*p_input++ = buf;
-	}		
+	parser_catch_sign(&buf);
+
 	GPIOD->ODR ^= GPIO_ODR_ODR_14;
 }
 
